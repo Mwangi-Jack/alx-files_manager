@@ -1,37 +1,37 @@
-const redis = require('redis');
-
-const client = redis.createClient({
-  url: 'redis://localhost:6379'
-});
+import { createClient } from 'redis';
 
 class RedisClient {
   constructor () {
-    client.connect();
-    client.on('err', (err) => {
+    this.client = createClient({
+      url: 'redis://127.0.0.1:6379'
+    });
+
+    this.client.connect();
+    this.client.on('err', (err) => {
       console.log(err);
     });
   }
 
   isAlive () {
-    return !!client;
+    return !!this.client;
   }
 
   async get (key) {
-    const value = await client.get(key);
+    const value = await this.client.get(key);
     return value;
   }
 
   async set (key, val, dur) {
-    await client.set(key, val, {
+    await this.client.set(key, val, {
       EX: dur
     });
   }
 
   async del (key) {
-    await client.del(key);
+    await this.client.del(key);
   }
 }
 
 const redisClient = new RedisClient();
 
-module.exports = redisClient;
+export default redisClient;
