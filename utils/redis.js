@@ -2,9 +2,7 @@ import { createClient } from 'redis';
 
 class RedisClient {
   constructor () {
-    this.client = createClient({
-      url: 'redis://127.0.0.1:6379'
-    });
+    this.client = createClient();
 
     this.client.connect();
     this.client.on('err', (err) => {
@@ -12,8 +10,8 @@ class RedisClient {
     });
   }
 
-  isAlive () {
-    return !!this.client;
+   isAlive () {
+	return this.client.isOpen;
   }
 
   async get (key) {
