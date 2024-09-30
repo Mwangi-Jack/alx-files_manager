@@ -124,12 +124,4 @@ cd 0x02-Session_authentication
 > [:point_right: Go to project](0x02-Session_authentication)
 <!---->
 
-# :man: Author and Credits.
-This project was done by [SE. Caleb Musau](https://github.com/MuSnr). Feel free to get intouch with me;
-
-:iphone: WhatsApp [+2540791072861](https://wa.me/2540791072861)
-
-:email: Email [calebmuteti4@gmail.com.com](mailto:calebmuteti4@mail.com@gmail.com)
-
-:thumbsup: A lot of thanks to [ALX-Africa Software Engineering](https://www.alxafrica.com/) program for the project requirements.
 
