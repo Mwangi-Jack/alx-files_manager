@@ -121,7 +121,5 @@ mkdir ./0x02-Session_authentication/
 touch ./0x02-Session_authentication/README.md
 cd 0x02-Session_authentication
 ```
-> [:point_right: Go to project](0x02-Session_authentication)
-<!---->
 
 
