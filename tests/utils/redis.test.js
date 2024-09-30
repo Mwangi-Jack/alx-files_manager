@@ -12,19 +12,19 @@ describe('+ RedisClient utility', () => {
     expect(redisClient.isAlive()).to.equal(true);
   });
 
-  it('+ Setting and getting a value', async () => {
+  it('+ Setting and getting a value', async function () {
     await redisClient.set('test_key', 345, 10);
     expect(await redisClient.get('test_key')).to.equal('345');
   });
 
-  it('+ Setting and getting an expired value', async () => {
+  it('+ Setting and getting an expired value', async function () {
     await redisClient.set('test_key', 356, 1);
     setTimeout(async () => {
       expect(await redisClient.get('test_key')).to.not.equal('356');
     }, 2000);
   });
 
-  it('+ Setting and getting a deleted value', async () => {
+  it('+ Setting and getting a deleted value', async function () {
     await redisClient.set('test_key', 345, 10);
     await redisClient.del('test_key');
     setTimeout(async () => {
